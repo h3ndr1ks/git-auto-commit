@@ -1,12 +1,13 @@
+use crate::cli::Args;
+use clap::CommandFactory;
+use clap_mangen::Man;
 use std::env::var_os;
 use std::fs;
 use std::fs::File;
 use std::path::PathBuf;
-use clap::CommandFactory;
-use clap_mangen::Man;
-use crate::cli::Args;
 
-#[path = "src/cli.rs"] mod cli;
+#[path = "src/cli.rs"]
+mod cli;
 
 fn create_assets_folder() -> PathBuf {
     let out_dir = PathBuf::from(var_os("OUT_DIR").unwrap());
